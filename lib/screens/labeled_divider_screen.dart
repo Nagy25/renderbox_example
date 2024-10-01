@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renderbox_example/render_objects/labeled_divider.dart';
 
 class LabeledDividerScreen extends StatelessWidget {
   const LabeledDividerScreen({super.key});
@@ -7,11 +8,19 @@ class LabeledDividerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('labeled_divider'),
+        title: const Text('labeled_divider'),
       ),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
+        children: [
+          Text('Above the divider'),
+          LabeledDivider(
+            label: 'Divider Label',
+            thickness: 2.0,
+            color: Colors.blue,
+          ),
+          Text('Below the divider'),
+        ],
       ),
     );
   }
